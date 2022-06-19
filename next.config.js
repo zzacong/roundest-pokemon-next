@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-   eslint: {
+  eslint: {
     dirs: ['src'],
+  },
+  images: {
+    domains: ['raw.githubusercontent.com'],
   },
 }
 
