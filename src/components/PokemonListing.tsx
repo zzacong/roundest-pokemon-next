@@ -15,7 +15,7 @@ export default function PokemonListing({ pokemon, vote }: PokemonListingProps) {
           alt={pokemon.name}
           width={160}
           height={160}
-          className="aspect-square w-full"
+          className="animate-fade-in"
         />
         <p className="-mt-3 text-center text-xl capitalize text-slate-700">
           {pokemon.name}
