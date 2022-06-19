@@ -1,7 +1,6 @@
-const randInt = (max: number) => Math.floor(Math.random() * max)
+import { MAX_DEX_ID } from '$lib/constants'
 
-// const MAX_DEX_ID = 5
-const MAX_DEX_ID = 493
+const randInt = (max: number) => Math.floor(Math.random() * max)
 
 export const getRandomPokemon = (notThisOne?: number): number => {
   const pokedexNumber = randInt(MAX_DEX_ID) + 1
