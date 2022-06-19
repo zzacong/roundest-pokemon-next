@@ -11,8 +11,8 @@ export const appRouter = trpc
       id: z.number(),
     }),
     async resolve({ input }) {
-      const client = new PokemonClient()
-      const pokemon = await client.getPokemonById(input.id)
+      const pokeApi = new PokemonClient()
+      const pokemon = await pokeApi.getPokemonById(input.id)
       return { name: pokemon.name, sprites: pokemon.sprites }
     },
   })
