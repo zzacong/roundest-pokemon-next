@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { ClipLoader } from 'react-spinners'
 
 import { trpc } from '$lib/trpc'
 import { getOptionsForVote } from '$lib/utils/getRandomPokemon'
-import PokemonListing from '$components/PokemonListing'
+import { PokemonListing, LoadingSpinner } from '$components'
 
 export default function Home() {
   const [[first, second], setIds] = useState(() => getOptionsForVote())
@@ -16,21 +15,10 @@ export default function Home() {
   }
 
   if (firstPokemon.isLoading || secondPokemon.isLoading)
-    return (
-      <div className="grid h-screen w-screen place-items-center">
-        <ClipLoader color="white" size={120} speedMultiplier={0.75} />
-      </div>
-    )
+    return <LoadingSpinner />
 
   if (!firstPokemon.data || !secondPokemon.data)
-    return (
-      <div className="grid h-screen w-screen place-items-center">
-        <div className="space-y-10 text-center">
-          <ClipLoader color="white" size={120} speedMultiplier={0.75} />
-          <p className="font-mono text-3xl">no data to show</p>
-        </div>
-      </div>
-    )
+    return <LoadingSpinner message="no data to show" />
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
