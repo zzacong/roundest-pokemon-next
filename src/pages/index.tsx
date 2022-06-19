@@ -1,10 +1,8 @@
 import { trpc } from '$lib/trpc'
+import { getOptionsForVote } from '$lib/utils/getRandomPokemon'
 
 export default function Home() {
-  const { data, isLoading } = trpc.useQuery(['hello', { text: 'Zac' }])
-
-  if (isLoading) return <div>Loading...</div>
-  if (data) return <div>{data.greeting}</div>
+  const [first, second] = getOptionsForVote()
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
@@ -13,9 +11,13 @@ export default function Home() {
       </h1>
       <div className="p-8"></div>
       <div className="flex max-w-2xl items-center justify-between space-x-10 rounded border p-8">
-        <div className="h-16 w-16 bg-red-200"></div>
+        <div className="grid h-16 w-16 place-items-center bg-red-200 text-black">
+          {first}
+        </div>
         <div className="font-mono">VS</div>
-        <div className="h-16 w-16 bg-red-200"></div>
+        <div className="grid h-16 w-16 place-items-center bg-red-200 text-black">
+          {second}
+        </div>
       </div>
     </div>
   )
