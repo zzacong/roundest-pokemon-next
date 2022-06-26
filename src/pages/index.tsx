@@ -47,11 +47,13 @@ export default function Home() {
           <PokemonVoting
             pokemon={firstPokemon}
             vote={voteForRoundest(firstPokemon.id)}
+            disabled={voteMutation.isLoading || isLoading}
           />
           <div className="font-mono text-2xl">VS</div>
           <PokemonVoting
             pokemon={secondPokemon}
             vote={voteForRoundest(secondPokemon.id)}
+            disabled={voteMutation.isLoading || isLoading}
           />
         </div>
       )}

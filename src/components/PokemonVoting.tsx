@@ -1,15 +1,26 @@
 import type { inferQueryResponse } from '$backend/router'
 import Image from 'next/image'
+import clsx from 'clsx'
 
 type PokemonFromServer = inferQueryResponse<'get-pokemon-by-id'>
 interface PokemonVotingProps {
   pokemon: PokemonFromServer
+  disabled?: boolean
   vote: () => void
 }
 
-export default function PokemonVoting({ pokemon, vote }: PokemonVotingProps) {
+export default function PokemonVoting({
+  pokemon,
+  vote,
+  disabled,
+}: PokemonVotingProps) {
   return (
-    <div className="flex flex-col items-center">
+    <div
+      className={clsx(
+        'flex flex-col items-center transition-opacity',
+        disabled && 'opacity-0'
+      )}
+    >
       <div className="mb-4 flex h-52 w-52 flex-col items-center rounded bg-white p-4">
         <Image
           src={pokemon.spriteUrl}
