@@ -4,6 +4,7 @@ import type { AppRouter } from '$backend/router'
 import Head from 'next/head'
 import { withTRPC } from '@trpc/next'
 
+import { Footer, Header } from '$components'
 import '$styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }

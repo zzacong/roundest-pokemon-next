@@ -8,7 +8,7 @@ interface SummaryPageProps {
 
 export default function SummaryPage({ pokemon }: SummaryPageProps) {
   return (
-    <div className="flex flex-col py-20">
+    <div className="mb-8 flex flex-col pt-16">
       <h1 className="mb-8 text-center text-2xl font-bold lg:text-4xl">
         Summary
       </h1>

@@ -29,7 +29,7 @@ export default function Home() {
     return <LoadingSpinner message="no data to show" />
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
+    <div className="flex grow flex-col items-center justify-center">
       <h1 className="mb-20 text-center text-2xl font-bold lg:text-4xl">
         Which Pokemon is Roundest?
       </h1>

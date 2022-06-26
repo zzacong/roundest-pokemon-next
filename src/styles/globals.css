@@ -6,4 +6,8 @@
   body {
     @apply bg-gray-800 text-white;
   }
+
+  #__next {
+    @apply flex min-h-screen flex-col;
+  }
 }
