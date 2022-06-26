@@ -19,13 +19,15 @@ export default function PokemonListing({ pokemon }: PokemonListingProps) {
         <p className="ml-4 font-semibold capitalize">{pokemon.name}</p>
       </div>
       <div className="pr-4">
-        <p className="font-mono text-xl">{generateCountPercent(pokemon)}%</p>
+        <p className="font-mono text-xl">
+          {generateCountPercent(pokemon).toFixed(2)}%
+        </p>
       </div>
     </div>
   )
 }
 
-const generateCountPercent = (pokemon: PokemonQueryResult[number]) => {
+export const generateCountPercent = (pokemon: PokemonQueryResult[number]) => {
   const { voteFor, voteAgainst } = pokemon._count
   const total = voteFor + voteAgainst
   if (total === 0) return 0
