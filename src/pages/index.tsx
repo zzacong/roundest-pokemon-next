@@ -11,7 +11,6 @@ export default function Home() {
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
   })
-  const { firstPokemon, secondPokemon } = pair ?? {}
 
   const voteMutation = trpc.useMutation(['cast-vote'])
 
@@ -40,19 +39,19 @@ export default function Home() {
 
       {isLoading ? (
         <LoadingSpinner />
-      ) : !firstPokemon || !secondPokemon ? (
+      ) : !pair ? (
         <LoadingSpinner message="no pokemon to show" />
       ) : (
         <div className="flex max-w-2xl items-center justify-between space-x-10 rounded border py-8 px-16">
           <PokemonVoting
-            pokemon={firstPokemon}
-            vote={voteForRoundest(firstPokemon.id)}
+            pokemon={pair.firstPokemon}
+            vote={voteForRoundest(pair.firstPokemon.id)}
             disabled={voteMutation.isLoading || isLoading}
           />
           <div className="font-mono text-2xl">VS</div>
           <PokemonVoting
-            pokemon={secondPokemon}
-            vote={voteForRoundest(secondPokemon.id)}
+            pokemon={pair.secondPokemon}
+            vote={voteForRoundest(pair.secondPokemon.id)}
             disabled={voteMutation.isLoading || isLoading}
           />
         </div>
