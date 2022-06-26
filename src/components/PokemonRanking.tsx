@@ -3,12 +3,13 @@ import Image from 'next/image'
 
 interface PokemonListingProps {
   pokemon: PokemonQueryResult[number]
+  rank: number
 }
 
-export default function PokemonListing({ pokemon }: PokemonListingProps) {
+export default function PokemonListing({ pokemon, rank }: PokemonListingProps) {
   return (
-    <div className="flex items-center justify-between border-b p-2">
-      <div className="flex items-center">
+    <div className="relative flex items-center justify-between border-b p-2">
+      <div className="flex items-center pl-6">
         <Image
           src={pokemon.spriteUrl}
           alt={pokemon.name}
@@ -22,6 +23,9 @@ export default function PokemonListing({ pokemon }: PokemonListingProps) {
         <p className="font-mono text-xl">
           {generateCountPercent(pokemon).toFixed(2)}%
         </p>
+      </div>
+      <div className="absolute top-0 left-0 z-10 grid place-items-center rounded-br-md bg-yellow-500 px-2 font-semibold text-white">
+        {rank}
       </div>
     </div>
   )
