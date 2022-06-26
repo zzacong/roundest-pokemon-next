@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "ci-check": "run-p lint typecheck"
   },
+  "license": "MIT",
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
