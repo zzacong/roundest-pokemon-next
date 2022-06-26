@@ -5,8 +5,8 @@ import { getOptionsForVote } from '$lib/utils/getRandomPokemon'
 import { PokemonListing, LoadingSpinner } from '$components'
 
 export default function Home() {
-  const [[first, second], setIds] = useState(() => getOptionsForVote())
-
+  const [pair, setIds] = useState(() => getOptionsForVote())
+  const [first, second] = pair
   const firstPokemon = trpc.useQuery(['get-pokemon-by-id', { id: first }])
   const secondPokemon = trpc.useQuery(['get-pokemon-by-id', { id: second }])
 

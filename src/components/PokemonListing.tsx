@@ -11,7 +11,7 @@ export default function PokemonListing({ pokemon, vote }: PokemonListingProps) {
     <div className="flex flex-col items-center">
       <div className="mb-4 flex h-52 w-52 flex-col items-center rounded bg-white p-4">
         <Image
-          src={pokemon.sprites.front_default ?? ''}
+          src={pokemon.spriteUrl}
           alt={pokemon.name}
           width={160}
           height={160}

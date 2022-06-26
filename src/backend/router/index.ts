@@ -11,9 +11,11 @@ export const appRouter = trpc
       id: z.number(),
     }),
     async resolve({ input }) {
-      const pokeApi = new PokemonClient()
-      const pokemon = await pokeApi.getPokemonById(input.id)
-      return { name: pokemon.name, sprites: pokemon.sprites }
+      const pokemon = await prisma.pokemon.findFirst({
+        where: { id: input.id },
+      })
+      if (!pokemon) throw new Error(`Pokemon with id (${input.id}) not found`)
+      return pokemon
     },
   })
   .mutation('cast-vote', {
