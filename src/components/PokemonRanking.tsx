@@ -24,7 +24,7 @@ export default function PokemonListing({ pokemon, rank }: PokemonListingProps) {
           {generateCountPercent(pokemon).toFixed(2)}%
         </p>
       </div>
-      <div className="absolute top-0 left-0 z-10 grid place-items-center rounded-br-md bg-yellow-500 px-2 font-semibold text-white">
+      <div className="absolute top-0 left-0 grid place-items-center rounded-br-md bg-gray-600 px-2 py-1 font-mono text-sm font-semibold text-white">
         {rank}
       </div>
     </div>
