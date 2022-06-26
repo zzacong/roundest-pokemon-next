@@ -21,7 +21,7 @@ export default function PokemonVoting({
         disabled && 'opacity-0'
       )}
     >
-      <div className="mb-4 flex h-52 w-52 flex-col items-center rounded bg-white p-4">
+      <div className="mb-4 flex h-48 w-48 flex-col items-center rounded bg-white p-4 md:h-52 md:w-52">
         <Image
           src={pokemon.spriteUrl}
           alt={pokemon.name}
@@ -35,7 +35,7 @@ export default function PokemonVoting({
       </div>
       <button
         onClick={vote}
-        className="inline-flex items-center rounded bg-white px-4 py-2 text-xs font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        className="inline-flex items-center rounded bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:text-xs"
       >
         Rounder
       </button>

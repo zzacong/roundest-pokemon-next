@@ -9,7 +9,7 @@ interface PokemonListingProps {
 export default function PokemonListing({ pokemon, rank }: PokemonListingProps) {
   return (
     <div className="relative flex items-center justify-between border-b p-2">
-      <div className="flex items-center pl-6">
+      <div className="flex items-center pl-8 lg:pl-6">
         <Image
           src={pokemon.spriteUrl}
           alt={pokemon.name}
