@@ -29,7 +29,7 @@ export default function SummaryPage({ pokemon }: SummaryPageProps) {
 
         <div className="mx-auto grid w-full max-w-2xl border">
           {pokemon.map((p, i) => (
-            <PokemonRanking key={p.id} pokemon={p} rank={i} />
+            <PokemonRanking key={p.id} pokemon={p} rank={i + 1} />
           ))}
         </div>
       </div>
