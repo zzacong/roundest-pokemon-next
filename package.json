@@ -8,8 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "ci-check": "run-p lint typecheck",
-    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
+    "ci-check": "run-p lint typecheck"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^3.15.2",
