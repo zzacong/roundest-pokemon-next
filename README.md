@@ -16,16 +16,16 @@ Prerequisite:
 Setup
 
 1. Clone repo
-1. `npm install`
-1. Create `.env` file if one does not already exist
-1. Add connection URLs for both database and shadow db to .env ([example .env file here](https://gist.github.com/TheoBr/e450c52a52a9f9c9b49ef07212689685))
-1. Initialize database - `npx prisma migrate dev`
-1. Initialize base data set - `npm run ts-node ./scripts/fill-db.ts`
-1. Run dev server `npm run dev`
+2. `npm install`
+3. Create `.env` file if one does not already exist
+4. Add connection URLs for both database and shadow db to .env ([example .env file here](./.env.example))
+5. Initialize database - `npx prisma migrate dev`
+   - This will run `prisma db seed` underneath
+6. Run dev server `npm run dev`
 
 ## TODO
 
 - [x] Use next/image to handle image caching and better rendering
-- [ ] Persist data fetched from PokemonAPI
-- [ ] Create the results page with counting/sorting
+- [x] Persist data fetched from PokemonAPI
+- [x] Create the results page with counting/sorting
 - [ ] Better loading state between votes

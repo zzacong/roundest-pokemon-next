@@ -1,19 +1,27 @@
 import type { GetStaticProps } from 'next'
-import type { AsyncReturnType } from '$lib/types'
-import { getPokemonInOrder } from '$lib/utils'
+import { getPokemonInOrder, type PokemonQueryResult } from '$lib/utils'
+import { PokemonListing } from '$components'
 
 interface SummaryPageProps {
-  pokemon: AsyncReturnType<typeof getPokemonInOrder>
+  pokemon: PokemonQueryResult
 }
 
 export default function SummaryPage({ pokemon }: SummaryPageProps) {
   return (
-    <div>
-      <h1>Summary</h1>
-      <div>
-        <pre className="whitespace-pre break-words">
-          {JSON.stringify(pokemon)}
-        </pre>
+    <div className="flex flex-col py-20">
+      <h1 className="mb-8 text-center text-2xl font-bold lg:text-4xl">
+        Summary
+      </h1>
+
+      <h3 className="mb-16 text-center text-xl">
+        Total pokemon:
+        <span className="font-mono font-bold"> {pokemon.length}</span>
+      </h3>
+
+      <div className="mx-auto grid w-full max-w-2xl border">
+        {pokemon.map(p => (
+          <PokemonListing key={p.id} pokemon={p} />
+        ))}
       </div>
     </div>
   )

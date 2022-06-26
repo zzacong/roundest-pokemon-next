@@ -1,3 +1,4 @@
+import type { AsyncReturnType } from '$lib/types'
 import { prisma } from '$lib/prisma'
 
 export const getPokemonInOrder = () =>
@@ -14,3 +15,5 @@ export const getPokemonInOrder = () =>
       voteFor: { _count: 'desc' },
     },
   })
+
+export type PokemonQueryResult = AsyncReturnType<typeof getPokemonInOrder>
