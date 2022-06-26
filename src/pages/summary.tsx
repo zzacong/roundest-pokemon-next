@@ -1,7 +1,7 @@
 import type { GetStaticProps } from 'next'
 import { getPokemon, type PokemonQueryResult } from '$lib/utils'
-import { PokemonListing } from '$components'
-import { generateCountPercent } from '$components/PokemonListing'
+import { PokemonRanking } from '$components'
+import { generateCountPercent } from '$components/PokemonRanking'
 import Head from 'next/head'
 
 interface SummaryPageProps {
@@ -29,7 +29,7 @@ export default function SummaryPage({ pokemon }: SummaryPageProps) {
 
         <div className="mx-auto grid w-full max-w-2xl border">
           {pokemon.map(p => (
-            <PokemonListing key={p.id} pokemon={p} />
+            <PokemonRanking key={p.id} pokemon={p} />
           ))}
         </div>
       </div>
