@@ -21,7 +21,10 @@ export default function PokemonVoting({
         disabled && 'opacity-0'
       )}
     >
-      <div className="mb-4 flex h-48 w-48 flex-col items-center rounded bg-white p-4 md:h-52 md:w-52">
+      <button
+        onClick={vote}
+        className="flex h-40 w-40 flex-col items-center rounded bg-white p-4 shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2 md:h-52 md:w-52"
+      >
         <Image
           src={pokemon.spriteUrl}
           alt={pokemon.name}
@@ -32,12 +35,6 @@ export default function PokemonVoting({
         <p className="-mt-3 text-center text-xl capitalize text-slate-700">
           {pokemon.name}
         </p>
-      </div>
-      <button
-        onClick={vote}
-        className="inline-flex items-center rounded bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:text-xs"
-      >
-        Rounder
       </button>
     </div>
   )
