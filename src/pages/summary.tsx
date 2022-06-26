@@ -8,11 +8,13 @@ interface SummaryPageProps {
   pokemon: PokemonQueryResult
 }
 
+const pageTitle = 'Summary | Roundest Pokémon'
+
 export default function SummaryPage({ pokemon }: SummaryPageProps) {
   return (
     <>
       <Head>
-        <title>Summary | Roundest Pokemon</title>
+        <title>{pageTitle}</title>
       </Head>
 
       <div className="mb-8 flex flex-col pt-16">
