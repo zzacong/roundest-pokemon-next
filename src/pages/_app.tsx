@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c52b20" />
         <meta name="msapplication-TileColor" content="#c52b20" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#1f2937" />
       </Head>
 
       <Header />
