@@ -6,6 +6,7 @@ const nextConfig = {
   },
   images: {
     domains: ['raw.githubusercontent.com'],
+    minimumCacheTTL: 6000000,
   },
 }
 
