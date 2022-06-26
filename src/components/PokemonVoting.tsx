@@ -2,11 +2,12 @@ import type { inferQueryResponse } from '$backend/router'
 import Image from 'next/image'
 
 type PokemonFromServer = inferQueryResponse<'get-pokemon-by-id'>
-type PokemonListingProps = {
+interface PokemonVotingProps {
   pokemon: PokemonFromServer
   vote: () => void
 }
-export default function PokemonListing({ pokemon, vote }: PokemonListingProps) {
+
+export default function PokemonVoting({ pokemon, vote }: PokemonVotingProps) {
   return (
     <div className="flex flex-col items-center">
       <div className="mb-4 flex h-52 w-52 flex-col items-center rounded bg-white p-4">

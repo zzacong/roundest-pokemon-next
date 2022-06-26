@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { trpc } from '$lib/trpc'
 import { getOptionsForVote } from '$lib/utils/getRandomPokemon'
-import { PokemonListing, LoadingSpinner } from '$components'
+import { PokemonVoting, LoadingSpinner } from '$components'
 
 export default function Home() {
   const [pair, setIds] = useState(() => getOptionsForVote())
@@ -35,12 +35,12 @@ export default function Home() {
       </h1>
 
       <div className="flex max-w-2xl items-center justify-between space-x-10 rounded border py-8 px-16">
-        <PokemonListing
+        <PokemonVoting
           pokemon={firstPokemon.data}
           vote={voteForRoundest(first)}
         />
         <div className="font-mono text-2xl">VS</div>
-        <PokemonListing
+        <PokemonVoting
           pokemon={secondPokemon.data}
           vote={voteForRoundest(second)}
         />
