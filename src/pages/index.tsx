@@ -18,6 +18,8 @@ export default function Home() {
     } else {
       voteMutation.mutate({ votedFor: second, votedAgainst: first })
     }
+    // todo: fire mutation
+    setIds(getOptionsForVote())
   }
 
   if (firstPokemon.isLoading || secondPokemon.isLoading)
