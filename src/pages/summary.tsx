@@ -37,9 +37,11 @@ export default function SummaryPage({ pokemon }: SummaryPageProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const pokemonOrdered = await getPokemon()
-  pokemonOrdered.sort(
-    (a, b) => generateCountPercent(b) - generateCountPercent(a)
-  )
+  pokemonOrdered.sort((a, b) => {
+    const difference = generateCountPercent(b) - generateCountPercent(a)
+    if (difference === 0) return b._count.voteFor - a._count.voteFor
+    return difference
+  })
 
   return {
     props: {
