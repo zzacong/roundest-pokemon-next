@@ -1,5 +1,5 @@
 import type { GetStaticProps } from 'next'
-import { getPokemonInOrder, type PokemonQueryResult } from '$lib/utils'
+import { getPokemon, type PokemonQueryResult } from '$lib/utils'
 import { PokemonListing } from '$components'
 import { generateCountPercent } from '$components/PokemonListing'
 import Head from 'next/head'
@@ -36,7 +36,7 @@ export default function SummaryPage({ pokemon }: SummaryPageProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pokemonOrdered = await getPokemonInOrder()
+  const pokemonOrdered = await getPokemon()
   pokemonOrdered.sort(
     (a, b) => generateCountPercent(b) - generateCountPercent(a)
   )

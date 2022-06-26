@@ -1,7 +1,7 @@
 import type { AsyncReturnType } from '$lib/types'
 import { prisma } from '$lib/prisma'
 
-export const getPokemonInOrder = () =>
+export const getPokemon = () =>
   prisma.pokemon.findMany({
     include: {
       _count: {
@@ -11,9 +11,6 @@ export const getPokemonInOrder = () =>
         },
       },
     },
-    orderBy: {
-      voteFor: { _count: 'desc' },
-    },
   })
 
-export type PokemonQueryResult = AsyncReturnType<typeof getPokemonInOrder>
+export type PokemonQueryResult = AsyncReturnType<typeof getPokemon>
