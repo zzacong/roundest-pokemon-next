@@ -1,4 +1,4 @@
-import type { AsyncReturnType } from '$lib/types'
+import type { inferAsyncReturnType } from '@trpc/server'
 import { prisma } from '$lib/prisma'
 
 export const getPokemon = () =>
@@ -13,4 +13,4 @@ export const getPokemon = () =>
     },
   })
 
-export type PokemonQueryResult = AsyncReturnType<typeof getPokemon>
+export type PokemonQueryResult = inferAsyncReturnType<typeof getPokemon>
