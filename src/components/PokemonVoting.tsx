@@ -1,8 +1,9 @@
-import type { inferQueryResponse } from '$backend/router'
+import type { RouterOutputs } from '$lib/trpc'
+
 import Image from 'next/image'
 import clsx from 'clsx'
 
-type PokemonFromServer = inferQueryResponse<'get-pokemon-by-id'>
+type PokemonFromServer = RouterOutputs['pokemon']['getPokemonById']
 interface PokemonVotingProps {
   pokemon: PokemonFromServer
   disabled?: boolean

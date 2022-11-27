@@ -16,8 +16,8 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
-      "$backend": ["backend"],
-      "$backend/*": ["backend/*"],
+      "$server": ["server"],
+      "$server/*": ["server/*"],
       "$components": ["components"],
       "$components/*": ["components/*"],
       "$env": ["env"],

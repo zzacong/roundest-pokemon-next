@@ -6,13 +6,13 @@ export default function Home() {
     data: pair,
     isLoading,
     refetch,
-  } = trpc.useQuery(['get-pokemon-pair'], {
+  } = trpc.pokemon.getPokemonPair.useQuery(undefined, {
     refetchInterval: false,
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
   })
 
-  const voteMutation = trpc.useMutation(['cast-vote'])
+  const voteMutation = trpc.pokemon.castVote.useMutation()
 
   const voteForRoundest = (selected: number) => () => {
     if (!pair) return
