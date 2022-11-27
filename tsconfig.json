@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,6 +20,8 @@
       "$backend/*": ["backend/*"],
       "$components": ["components"],
       "$components/*": ["components/*"],
+      "$env": ["env"],
+      "$env/*": ["env/*"],
       "$lib": ["lib"],
       "$lib/*": ["lib/*"],
       "$pages": ["pages"],
@@ -30,6 +32,6 @@
       "$styles/*": ["styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
   "exclude": ["node_modules"]
 }

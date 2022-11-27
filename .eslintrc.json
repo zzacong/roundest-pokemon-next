@@ -1,5 +1,15 @@
 {
-  "extends": ["plugin:prettier/recommended", "next/core-web-vitals"],
-  "plugins": ["prettier"],
-  "rules": {}
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "warn"
+  }
 }
