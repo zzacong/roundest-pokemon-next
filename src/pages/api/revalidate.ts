@@ -1,11 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import { env } from '$env/server.mjs'
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   // Check for secret to confirm this is a valid request
-  if (req.query.secret !== process.env.REV_SECRET_TOKEN) {
+  if (req.query.secret !== env.REV_SECRET_TOKEN) {
     return res.status(401).json({ message: 'Invalid token' })
   }
 

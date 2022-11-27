@@ -13,10 +13,12 @@ export default function Footer() {
           Source code
         </a>
         <span>|</span>
-        <Link href="/summary" passHref>
-          <a className="text-base font-semibold hover:underline hover:opacity-80">
-            View summary
-          </a>
+        <Link
+          href="/summary"
+          passHref
+          className="text-base font-semibold hover:underline hover:opacity-80"
+        >
+          View summary
         </Link>
       </nav>
     </footer>

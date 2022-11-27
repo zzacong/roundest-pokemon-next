@@ -1,7 +1,7 @@
 import { PokemonClient } from 'pokenode-ts'
 
 import { MAX_DEX_ID } from '../src/lib/constants'
-import { prisma } from '../src/lib/prisma'
+import { prisma } from '../src/server/db/prisma'
 
 const doBackfill = async () => {
   const pokeApi = new PokemonClient()
