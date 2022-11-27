@@ -1,4 +1,4 @@
-import type { PokemonQueryResult } from '$lib/utils'
+import type { PokemonQueryResult } from '$server/utils'
 import Image from 'next/image'
 
 interface PokemonListingProps {

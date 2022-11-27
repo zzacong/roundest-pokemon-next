@@ -1,5 +1,5 @@
 import type { GetStaticProps } from 'next'
-import { getPokemon, type PokemonQueryResult } from '$lib/utils'
+import { getPokemon, type PokemonQueryResult } from '$server/utils'
 import { PokemonRanking } from '$components'
 import { generateCountPercent } from '$components/PokemonRanking'
 import Head from 'next/head'

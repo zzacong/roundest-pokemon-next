@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 import { router, publicProcedure } from '$server/trpc/trpc'
-import { getOptionsForVote } from '$lib/utils'
+import { getOptionsForVote } from '$server/utils'
 
 export const pokemonRouter = router({
   getPokemonById: publicProcedure
