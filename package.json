@@ -24,6 +24,7 @@
     "@trpc/server": "^10.3.0",
     "clsx": "^1.2.1",
     "next": "13.0.5",
+    "next-axiom": "^0.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-spinners": "^0.13.6",

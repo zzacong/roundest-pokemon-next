@@ -19,6 +19,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
   next: 13.0.5
+  next-axiom: ^0.16.0
   npm-run-all: ^4.1.5
   pokenode-ts: ^1.17.0
   postcss: ^8.4.19
@@ -43,6 +44,7 @@ dependencies:
   '@trpc/server': 10.3.0
   clsx: 1.2.1
   next: 13.0.5_biqbaboplfbrettd7655fr4n2y
+  next-axiom: 0.16.0_next@13.0.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-spinners: 0.13.6_biqbaboplfbrettd7655fr4n2y
@@ -2193,6 +2195,16 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /next-axiom/0.16.0_next@13.0.5:
+    resolution: {integrity: sha512-WlmObMtra/OJPiJ6Gim4g8OTuLlJx9DVTeEaNmBIO3wEkR+Nt4932/xng2a9XofOVR7RgaNk1QIyPrqZW9P25w==}
+    engines: {node: '>=15'}
+    peerDependencies:
+      next: ^12.1.4 || ^13
+    dependencies:
+      next: 13.0.5_biqbaboplfbrettd7655fr4n2y
+      whatwg-fetch: 3.6.2
+    dev: false
+
   /next/13.0.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-awpc3DkphyKydwCotcBnuKwh6hMqkT5xdiBK4OatJtOZurDPBYLP62jtM2be/4OunpmwIbsS0Eyv+ZGU97ciEg==}
     engines: {node: '>=14.6.0'}
@@ -3251,6 +3263,10 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /whatwg-fetch/3.6.2:
+    resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
+    dev: false
 
   /which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}

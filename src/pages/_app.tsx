@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app'
 
 import Head from 'next/head'
-import { trpc } from '$lib/trpc'
 
+import { trpc } from '$lib/trpc'
 import { Footer, Header } from '$components'
 import '$styles/globals.css'
 
@@ -50,3 +50,5 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default trpc.withTRPC(MyApp)
+
+export { reportWebVitals } from 'next-axiom'
