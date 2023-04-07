@@ -1,6 +1,7 @@
 # Roundest - Which Pokémon is most round?
 
-(taken and modified from [Theos's roundest-mon repo](https://github.com/TheoBr/roundest-mon))
+Code along @ https://www.youtube.com/watch?v=PKy2lYEnhgs  
+[Theos's roundest-mon repo](https://github.com/TheoBr/roundest-mon)
 
 ## Getting Started
 
