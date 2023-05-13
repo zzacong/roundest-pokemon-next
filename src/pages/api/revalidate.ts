@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { env } from '$env/server.mjs'
+import { env } from '$env.mjs'
 
 export default async function handler(
   req: NextApiRequest,

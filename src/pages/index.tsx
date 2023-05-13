@@ -1,4 +1,4 @@
-import { trpc } from '$lib/trpc'
+import { api } from '$lib/api'
 import { PokemonVoting, LoadingSpinner } from '$components'
 
 export default function Home() {
@@ -6,13 +6,13 @@ export default function Home() {
     data: pair,
     isLoading,
     refetch,
-  } = trpc.pokemon.getPokemonPair.useQuery(undefined, {
+  } = api.pokemon.getPokemonPair.useQuery(undefined, {
     refetchInterval: false,
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
   })
 
-  const voteMutation = trpc.pokemon.castVote.useMutation()
+  const voteMutation = api.pokemon.castVote.useMutation()
 
   const voteForRoundest = (selected: number) => () => {
     if (!pair) return
@@ -28,7 +28,7 @@ export default function Home() {
         votedAgainst: pair.firstPokemon.id,
       })
     }
-    refetch()
+    void refetch()
   }
 
   return (

@@ -1,8 +1,8 @@
-import type { AppProps } from 'next/app'
+import { type AppType } from 'next/app'
 
 import Head from 'next/head'
 
-import { trpc } from '$lib/trpc'
+import { api } from '$lib/api'
 import { Footer, Header } from '$components'
 import '$styles/globals.css'
 
@@ -11,7 +11,7 @@ const pageDescription =
 const pageTitle = 'Roundest Pokémon - Public Poll'
 const imageMetaURL = '/pokeball.png'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -49,6 +49,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default trpc.withTRPC(MyApp)
+export default api.withTRPC(MyApp)
 
 export { reportWebVitals } from 'next-axiom'

@@ -1,5 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const defaultTheme = require('tailwindcss/defaultTheme')
+import { type Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -26,4 +26,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+} satisfies Config

@@ -1,4 +1,4 @@
-import type { RouterOutputs } from '$lib/trpc'
+import type { RouterOutputs } from '$lib/api'
 
 import Image from 'next/image'
 import clsx from 'clsx'

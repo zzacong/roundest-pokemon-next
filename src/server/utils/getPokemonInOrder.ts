@@ -1,5 +1,5 @@
 import type { inferAsyncReturnType } from '@trpc/server'
-import { prisma } from '$server/db/prisma'
+import { prisma } from '$server/db'
 
 export const getPokemon = () =>
   prisma.pokemon.findMany({
